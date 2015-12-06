@@ -1,10 +1,10 @@
-Package: vineeth-pg-R
+Package: gtPagerankVD
 Type: Package
 Title: R Interface for the Grokit System
 Version: 1.0
 Date: 2015-11-12
-Author: jh
-Maintainer: jk 
+Author: Vineeth Dasaraju
+Maintainer: Vineeth Dasaraju <vineethd@ufl.edu>
 Description: R Interface for the Grokit System
 License: Propietary
 Depends: gtBase
