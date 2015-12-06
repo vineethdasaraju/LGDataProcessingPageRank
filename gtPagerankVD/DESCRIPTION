@@ -1,0 +1,10 @@
+Package: vineeth-pg-R
+Type: Package
+Title: R Interface for the Grokit System
+Version: 1.0
+Date: 2015-11-12
+Author: jh
+Maintainer: jk 
+Description: R Interface for the Grokit System
+License: Propietary
+Depends: gtBase
