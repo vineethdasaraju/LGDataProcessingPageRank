@@ -1,6 +1,20 @@
-pagerankVD <- function(data, inputs, outputs) {
-    inputs <- convert.exprs(substitute(inputs))
-    outputs <- convert.atts(substitute(outputs))
-    gla <- GLA(pagerankVD::page_rank_vd)
-    Aggregate(data, gla, inputs, outputs)
+PagerankVD <- function(data, inputs, outputs, block = 40, scale = 2, adj = TRUE, hash = TRUE) {
+  if (missing(inputs))
+    inputs <- convert.schema(data$schema)
+  else
+    inputs <- substitute(inputs)
+  inputs <- convert.exprs(inputs)
+
+  if (length(inputs) != 2)
+    stop("2 inputs expected.");
+
+  outputs <- substitute(outputs)
+  check.atts(outputs)
+  outputs <- convert.atts(outputs)
+  if (length(outputs) != 2)
+    stop("2 outputs expected.")
+
+  gla <- GLA(pagerankVD::page_rank_vd, block = block, scale = scale, adj = adj, hash = hash)
+
+  Aggregate(data, gla, inputs, outputs)
 }
