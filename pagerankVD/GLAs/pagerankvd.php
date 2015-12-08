@@ -42,7 +42,7 @@ function page_rank_vd($t_args, $inputs, $outputs)
     $sys_headers  = ['vector', 'algorithm'];
     $user_headers = [];
     $lib_headers  = [];
-    $libraries    = ['vector'];
+    $libraries    = [];
     $properties   = [];
     $extra        = [];
     $result_type  = ['fragment'];
