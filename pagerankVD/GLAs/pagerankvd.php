@@ -107,7 +107,7 @@ class <?=$className?> {
     cout << "Current Iteration: " << iteration;
       if (iteration == 1) {
       state.nVertices = ++nVertices;
-      cout << "num_nodes: " << num_nodes << endl;
+      cout << "num_nodes: " << nVertices << endl;
       oldPagerank.reserve(nVertices);
       pagerank.reserve(nVertices);
       weight.reserve(nVertices);
@@ -119,9 +119,9 @@ class <?=$className?> {
   }
 
   int GetNumFragments() {
-    cout << "Returning " << num_fragments << " fragments" << endl;
     long size = (nVertices - 1) / kBlock + 1;  // nVertices / kBlock rounded up.
     num_fragments = (iteration == 0) ? 0 : min(size, (long) kMaxFragments);
+    cout << "Returning " << num_fragments << " fragments" << endl;
     return num_fragments;
   }
 
