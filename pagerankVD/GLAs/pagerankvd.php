@@ -62,7 +62,7 @@ class <?=$className?> {
   using ConstantState = <?=$constantState?>;
   using Iterator = std::pair<int, int>;
   static const constexpr float kDamping = 0.85;
-  static const constexpr int nIterations = 20;
+  static const constexpr int nIterations = 5;
   static const constexpr int kBlock = 32;
   static const constexpr int kMaxFragments = 64;
 
@@ -104,8 +104,10 @@ class <?=$className?> {
   // by performed it inside Finalize.
   bool ShouldIterate(ConstantState& state) {
     state.iteration = ++iteration;
+    cout << "Current Iteration: " << iteration;
       if (iteration == 1) {
       state.nVertices = ++nVertices;
+      cout << "num_nodes: " << num_nodes << endl;
       oldPagerank.reserve(nVertices);
       pagerank.reserve(nVertices);
       weight.reserve(nVertices);
@@ -117,6 +119,7 @@ class <?=$className?> {
   }
 
   int GetNumFragments() {
+    cout << "Returning " << num_fragments << " fragments" << endl;
     long size = (nVertices - 1) / kBlock + 1;  // nVertices / kBlock rounded up.
     num_fragments = (iteration == 0) ? 0 : min(size, (long) kMaxFragments);
     return num_fragments;
