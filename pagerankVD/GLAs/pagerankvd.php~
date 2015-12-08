@@ -53,7 +53,7 @@ using namespace std;
 class <?=$className?>;
 
 <?  $constantState = lookupResource(
-        'pagerankVD::page_rank_vd_Constant_State',
+        'statistics::Page_Rank_Constant_State',
         ['className' => $className]
     ); ?>
 
