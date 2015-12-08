@@ -1,4 +1,4 @@
-PagerankVD <- function(data, inputs, outputs, block = 40, scale = 2, adj = TRUE, hash = TRUE) {
+pagerankVD <- function(data, inputs, outputs, block = 40, scale = 2, adj = TRUE, hash = TRUE) {
   if (missing(inputs))
     inputs <- convert.schema(data$schema)
   else
