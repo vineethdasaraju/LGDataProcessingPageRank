@@ -1,4 +1,4 @@
-pagerankVD <- function(data, inputs, outputs, block = 40, scale = 2, adj = TRUE, hash = TRUE) {
+PageRank <- function(data, inputs, outputs, block = 40, scale = 2, adj = TRUE, hash = TRUE) {
   if (missing(inputs))
     inputs <- convert.schema(data$schema)
   else
@@ -14,7 +14,7 @@ pagerankVD <- function(data, inputs, outputs, block = 40, scale = 2, adj = TRUE,
   if (length(outputs) != 2)
     stop("2 outputs expected.")
 
-  gla <- GLA(pagerankVD::page_rank_vd, block = block, scale = scale, adj = adj, hash = hash)
+  gla <- GLA(pagerankVD::Page_Rank, block = block, scale = scale, adj = adj, hash = hash)
 
   Aggregate(data, gla, inputs, outputs)
 }
