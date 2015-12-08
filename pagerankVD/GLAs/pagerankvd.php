@@ -104,8 +104,8 @@ class <?=$className?> {
   // by performed it inside Finalize.
   bool ShouldIterate(ConstantState& state) {
     state.iteration = ++iteration;
-    cout << "Current Iteration: " << iteration;
-      if (iteration == 1) {
+    cout << "Finished Iteration: " << iteration << endl;
+    if (iteration == 1) {
       state.nVertices = ++nVertices;
       cout << "num_nodes: " << nVertices << endl;
       oldPagerank.reserve(nVertices);
