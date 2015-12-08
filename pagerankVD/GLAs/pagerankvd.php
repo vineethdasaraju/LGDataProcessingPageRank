@@ -147,7 +147,7 @@ class <?=$className?> {
     if (it->first > it->second)
       return false;
     node = it->first;
-    pagerank = pagerank(it->first);
+    rank = pagerank[it->first];
     it->first++;
     return true;
   }
